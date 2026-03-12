@@ -2,17 +2,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #141414;
-  --surface:   #1e1e1e;
-  --surface2:  #272727;
-  --border:    #2e2e2e;
-  --accent:    #6ee7b7;      /* mint green */
-  --accent2:   #3b82f6;      /* blue for search mark */
-  --danger:    #f87171;
-  --text:      #e8e8e8;
-  --muted:     #666;
-  --subtle:    #444;
-  --pin:       #fbbf24;
+  --bg:        #1b2030;
+  --surface:   #222840;
+  --surface2:  #2a3050;
+  --border:    #334068;
+  --accent:    #a8d4f5;      /* light blue pastel */
+  --accent2:   #a8d4f5;
+  --danger:    #f0908a;
+  --text:      #e8f0fc;
+  --muted:     #8a9bbf;
+  --subtle:    #506080;
+  --pin:       #f5d08a;
   --radius:    10px;
   --font-ui:   'Syne', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -247,7 +247,7 @@ body {
 
 .clip-text {
   font-size: 13px;
-  color: var(--text);
+  color: #f0f5ff;
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -255,7 +255,6 @@ body {
   overflow: visible;
   word-break: break-word;
 }
-.clip-text:hover { color: #fff; }
 .clip-text:hover { color: #fff; }
 
 .clip-actions {
@@ -279,13 +278,13 @@ body {
 .clip-time {
   font-family: var(--font-mono);
   font-size: 10px;
-  color: var(--muted);
+  color: #7a90b8;
 }
 
 .clip-chars {
   font-family: var(--font-mono);
   font-size: 10px;
-  color: var(--subtle);
+  color: #607090;
 }
 
 .clip-pin-badge {
@@ -302,9 +301,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -312,20 +311,22 @@ body {
   transition: background 0.12s, color 0.12s, transform 0.1s;
   flex-shrink: 0;
 }
+.action-btn svg { width: 18px; height: 18px; }
 .action-btn:hover { color: var(--text); }
-.action-btn.copy-btn:hover { background: rgba(110,231,183,0.1); color: var(--accent); }
-.action-btn.pin-btn:hover  { background: rgba(251,191,36,0.1);  color: var(--pin); }
-.action-btn.del-btn:hover  { background: rgba(248,113,113,0.1); color: var(--danger); }
+.action-btn.copy-btn:hover { background: rgba(168,212,245,0.12); color: var(--accent); }
+.action-btn.pin-btn:hover  { background: rgba(245,208,138,0.12); color: var(--pin); }
+.action-btn.del-btn:hover  { background: rgba(240,144,138,0.12); color: var(--danger); }
 .action-btn.pinned-active  { color: var(--pin); }
 .action-btn:active { transform: scale(0.88); }
 .action-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* ── Search highlight ──────────────────────────────── */
 mark {
-  background: rgba(59,130,246,0.35);
-  color: #93c5fd;
-  padding: 0 1px;
+  background: rgba(168,212,245,0.45);
+  color: #ffffff;
+  padding: 0 3px;
   border-radius: 3px;
+  font-weight: 600;
 }
 
 /* ── Empty State ───────────────────────────────────── */

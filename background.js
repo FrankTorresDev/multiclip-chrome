@@ -14,11 +14,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       pinned: false,
     });
 
-    // Keep last 100 (pinned items are preserved even beyond limit)
-    const pinned   = deduplicated.filter(c => c.pinned);
-    const unpinned = deduplicated.filter(c => !c.pinned);
-    const trimmed  = unpinned.slice(-100);
-
-    chrome.storage.local.set({ clipboardHistory: [...trimmed, ...pinned] });
+    chrome.storage.local.set({ clipboardHistory: deduplicated });
   });
 });
