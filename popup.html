@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>MultiClip</title>
+  </head>
+  <body>
+    <div id="toast" aria-live="polite"></div>
+
+    <main class="container">
+      <header class="app-header">
+        <div class="logo-area">
+          <svg class="logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <rect x="8" y="2" width="13" height="15" rx="2" fill="currentColor" opacity="0.3"/>
+            <rect x="3" y="7" width="13" height="15" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="app-title">MultiClip</span>
+          <span class="clip-count" id="clip-count">0</span>
+        </div>
+        <div class="header-actions">
+          <button id="sort-btn" class="icon-btn" aria-label="Toggle sort order" title="Sort order">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h18M7 12h10M11 18h2"/>
+            </svg>
+          </button>
+          <button id="clear-list-btn" class="icon-btn danger" aria-label="Clear all clips">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="search-wrap">
+        <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input id="clip-search" type="search" placeholder="Search clips…" aria-label="Search clips" autocomplete="off" />
+        <kbd class="search-hint">↑↓</kbd>
+      </div>
+
+      <div id="sort-indicator" class="sort-indicator">Newest first</div>
+
+      <section id="clips-div" role="list" aria-label="Clipboard history">
+        <!-- clips injected by popup.js -->
+      </section>
+    </main>
+
+    <div id="expand-modal" class="modal-overlay" hidden>
+      <div class="modal-card">
+        <div class="modal-header">
+          <span class="modal-label">Full clip</span>
+          <button id="modal-close" class="icon-btn" aria-label="Close">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <pre id="modal-text" class="modal-text"></pre>
+        <button id="modal-copy-btn" class="modal-copy-btn">Copy to clipboard</button>
+      </div>
+    </div>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
