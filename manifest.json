@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "MultiClip App",
+  "name": "MultiClip – Copy & Paste Clipboard Manager",
   "version": "2.0.0",
   "description": "Multi-copy clipboard manager that saves multiple copied texts and lets you reuse them anytime.",
 
